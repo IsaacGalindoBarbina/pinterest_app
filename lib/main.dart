@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pinterest_app/kernel/widgets/navigation/menu.dart';
+import 'package:pinterest_app/kernel/widgets/splash/splash.dart';
+
+
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +13,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const Splash(title: 'Cargando...'),
+        '/menu':(context) => const Menu()
+      },
     );
   }
 }
+
+
+
+
